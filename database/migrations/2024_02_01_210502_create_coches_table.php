@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('imagen', 100);
             $table->float('precio');
             $table->unsignedBigInteger('marca_id');
-            $table->foreign('marca_id')->references('id')->on('marcas');
+            $table->foreign('marca_id')->references('id')->on('marcas')->onDelete('cascade');
             $table->timestamps();
         });
     }

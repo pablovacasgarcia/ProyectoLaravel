@@ -16,8 +16,8 @@ return new class extends Migration
             $table->date('fecha');
             $table->unsignedBigInteger('coche_id');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('coche_id')->references('id')->on('coches');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('coche_id')->references('id')->on('coches')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
