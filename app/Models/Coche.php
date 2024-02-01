@@ -11,7 +11,7 @@ class Coche extends Model
 
     protected $table = 'coches';
 
-    protected $fillable = ['modelo'];
+    protected $fillable = ['modelo', 'precio', 'imagen'];
 
     protected $guarded = ['id'];
     protected  $primaryKey = 'id';

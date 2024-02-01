@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('modelo', 75);
             $table->string('imagen', 100);
+            $table->float('precio');
             $table->unsignedBigInteger('marca_id');
             $table->foreign('marca_id')->references('id')->on('marcas');
             $table->timestamps();
