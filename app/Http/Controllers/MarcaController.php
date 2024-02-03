@@ -2,10 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository\MarcaRepository;
 use Illuminate\Http\Request;
 
 class MarcaController extends Controller
 {
+
+    protected $marcas;
+
+    public function __construct(MarcaRepository $marcas){
+        $this->marcas = $marcas;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -35,7 +43,7 @@ class MarcaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('marca.coches', ['coches'=>$this->marcas->show($id)]);
     }
 
     /**

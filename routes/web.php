@@ -20,7 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('marca/{idMarca}', 'MarcaController@show')->name('marca.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -33,4 +32,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('coches', CocheController::class);
+Route::resource('marca', MarcaController::class);
+
 require __DIR__.'/auth.php';

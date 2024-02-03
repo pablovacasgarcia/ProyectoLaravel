@@ -16,7 +16,7 @@
                         {{ __('Inicio') }}
                     </x-nav-link>
                     @foreach(\App\Repository\MarcaRepository::getAll() as $marca)
-                        <x-nav-link href="marca/{{$marca['id']}}" :active="request()->routeIs('marca/'.$marca['id'])">
+                        <x-nav-link :href="route('marca.show', $marca['id'])" :active="Illuminate\Support\Facades\Route::currentRouteNamed('marca.show') && Illuminate\Support\Facades\Route::current()->parameters['marca'] == $marca['id']">
                             {{ $marca['nombre'] }}
                         </x-nav-link>
                     @endforeach
