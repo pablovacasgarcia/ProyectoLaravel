@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CitaController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CocheController;
@@ -33,5 +34,6 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('coches', CocheController::class)->middleware(['auth', 'verified']);
 Route::resource('marca', MarcaController::class)->middleware(['auth', 'verified']);
+Route::resource('citas', CitaController::class)->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

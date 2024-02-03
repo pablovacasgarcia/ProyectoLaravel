@@ -56,6 +56,10 @@
                             <x-dropdown-link :href="route('marca.index')">
                                 {{ __('Gestionar Marcas') }}
                             </x-dropdown-link>
+
+                            <x-dropdown-link :href="route('citas.index')">
+                                {{ __('Gestionar Citas') }}
+                            </x-dropdown-link>
                         @endif
 
                         <!-- Authentication -->
