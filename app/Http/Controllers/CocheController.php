@@ -62,7 +62,9 @@ class CocheController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $marcas = app(MarcaRepository::class)->getAll();
+        return view('coches.edit', ['marcas' => $marcas, 'datos'=>$this->coches->show($id)]);
+
     }
 
     /**
