@@ -30,7 +30,7 @@
             <!-- Page Content -->
             <main>
                 {{ $slot }}
-                @include('coches.create')
+                
             </main>
         </div>
     </body>

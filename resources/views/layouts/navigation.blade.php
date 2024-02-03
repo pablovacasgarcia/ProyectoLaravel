@@ -20,6 +20,7 @@
                             {{ $marca['nombre'] }}
                         </x-nav-link>
                     @endforeach
+                    
                 </div>
             </div>
 
@@ -45,6 +46,10 @@
 
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('coches.create')">
+                            {{ __('Gestionar Coches') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
