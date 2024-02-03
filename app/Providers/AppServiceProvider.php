@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Marca;
+use App\Repository\MarcaRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(MarcaRepository::class, function ($app) {
+            return new MarcaRepository(new Marca());
+        });
     }
 
     /**
