@@ -2,16 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository\CitaRepository;
 use Illuminate\Http\Request;
 
 class CitaController extends Controller
 {
+
+    public function __construct(CitaRepository $citas){
+        $this->citas = $citas;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $citas = $this->citas->getAll();
+        return view('citas.lista', ['citas' => $citas]);
     }
 
     /**
