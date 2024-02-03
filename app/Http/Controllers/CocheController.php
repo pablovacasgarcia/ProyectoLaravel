@@ -54,7 +54,7 @@ class CocheController extends Controller
      */
     public function show(string $id)
     {
-        $this->coches->show($id);
+        return view('coches.show', ['datos'=>$this->coches->show($id)]);
     }
 
     /**
