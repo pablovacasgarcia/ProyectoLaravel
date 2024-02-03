@@ -1,7 +1,9 @@
+
+
 <x-app-layout>
     <div class="row">
         <div class="col-sm-8 offset-sm-2">
-            <h1 class="display-3">Añadir coche</h1>
+            <h1 class="display-3">Editar coche</h1>
             <div>
                 <a style="margin: 19px;" href="{{ route('coches.index')}}" class="btn btn-primary">Volver</a>
             </div>
@@ -15,13 +17,16 @@
                         </ul>
                     </div><br />
                 @endif
-                <form method="post" action="{{ route('coches.store') }}" enctype="multipart/form-data">
+                <form method="post"  action="{{ route('coches.update', $datos->id)   }}" >
                     @csrf
+                    @method("PUT")
+                    
+
                     <div class="form-group">
                         <label for="marca_id">Marca:</label>
                         <select class="form-control" name="marca_id" id="marca_id">
                             @foreach($marcas as $marca)
-                                <option value="{{ $marca->id }}" <?php if($datos->marca_id == $marca_id){echo "selected";} ?>>{{ $marca->nombre }}</option>
+                                <option value="{{ $marca->id }}" <?php if($datos->marca_id == $marca->id){echo "selected";} ?>>{{ $marca->nombre }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -35,7 +40,7 @@
                     </div>
                     
 
-                    <button type="submit" class="btn btn-primary">Añadir coche</button>
+                    <button type="submit" class="btn btn-primary">Editar coche</button>
                 </form>
             </div>
             

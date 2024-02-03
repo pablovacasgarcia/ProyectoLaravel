@@ -29,6 +29,19 @@ class CocheRepository
         $imagenSubida = $imagen->move($destinationPath, $originalName);
     }
 
+    public function editarCoche($coche, $id):void{
+
+        Coche::where('id', $id)->update([
+            'modelo' => $coche['modelo'],
+            'precio' => $coche['precio'],
+            'marca_id' => $coche['marca_id']
+        ]);
+    }
+
+    public function borrarCoche($id):void{
+        Coche::destroy($id);
+    }
+
     public static function getAll(){
         return Coche::all();
     }
