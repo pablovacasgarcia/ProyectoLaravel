@@ -15,6 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Inicio') }}
                     </x-nav-link>
+                    @foreach(\App\Repository\MarcaRepository::getAll() as $marca)
+                        <x-nav-link href="marca/{{$marca['id']}}" :active="request()->routeIs('marca/'.$marca['id'])">
+                            {{ $marca['nombre'] }}
+                        </x-nav-link>
+                    @endforeach
                 </div>
             </div>
 
