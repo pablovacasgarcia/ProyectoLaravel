@@ -48,13 +48,15 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('coches.index')">
-                            {{ __('Gestionar Coches') }}
-                        </x-dropdown-link>
+                        @if(auth()->check() && auth()->user()->rol == 'admin')
+                            <x-dropdown-link :href="route('coches.index')">
+                                {{ __('Gestionar Coches') }}
+                            </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('marca.index')">
-                            {{ __('Gestionar Marcas') }}
-                        </x-dropdown-link>
+                            <x-dropdown-link :href="route('marca.index')">
+                                {{ __('Gestionar Marcas') }}
+                            </x-dropdown-link>
+                        @endif
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
