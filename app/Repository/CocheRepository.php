@@ -29,6 +29,6 @@ class CocheRepository
     }
 
     public function show($id){
-        $this->model->find($id);
+        return $this->model->find($id);
     }
 }
