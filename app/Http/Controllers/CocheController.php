@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repository\CocheRepository;
 
 class CocheController extends Controller
 {
@@ -19,7 +20,7 @@ class CocheController extends Controller
      */
     public function create()
     {
-        //
+        return view('coches.create');
     }
 
     /**
@@ -27,7 +28,16 @@ class CocheController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'modelo' => 'required',
+            'precio' => 'required',
+            'imagen' => 'required',
+            'marca_id' => 'required'
+        ]);
+
+        $this->coches->insertarCoches($validated);
+
+        return redirect()->action([CocheController::class, 'index']);
     }
 
     /**

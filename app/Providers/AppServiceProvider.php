@@ -16,6 +16,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(MarcaRepository::class, function ($app) {
             return new MarcaRepository(new Marca());
         });
+
+        $this->app->bind(CocheRepository::class, function ($app) {
+            return new CocheRepository(new Coche());
+        });
     }
 
     /**
