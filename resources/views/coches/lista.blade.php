@@ -18,6 +18,11 @@
                 <td>
                     
                     <a href="{{ route('coches.edit', $coche->id) }}">Editar</a>
+                    <form action="{{ route('coches.destroy', $coche->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Borrar</button>
+                    </form>
                     
             </tr>
         @endforeach

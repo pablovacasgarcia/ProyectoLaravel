@@ -72,7 +72,16 @@ class CocheController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+        $validated = $request->validate([
+            'modelo' => 'required',
+            'precio' => 'required',
+            'marca_id' => 'required'
+        ]);
+
+        $this->coches->editarCoche($validated, $id);
+
+        return redirect()->action([CocheController::class, 'index']);
     }
 
     /**
@@ -80,6 +89,8 @@ class CocheController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->coches->borrarCoche($id);
+        return redirect()->action([CocheController::class, 'index']);
     }
+    
 }
