@@ -52,7 +52,7 @@
                             {{ __('Gestionar Coches') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('marcas.index')">
+                        <x-dropdown-link :href="route('marca.index')">
                             {{ __('Gestionar Marcas') }}
                         </x-dropdown-link>
 

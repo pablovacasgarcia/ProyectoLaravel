@@ -20,7 +20,7 @@ class MarcaController extends Controller
     public function index()
     {
         $marcas = $this->marcas->getAll();
-        return view('marcas.lista', ['marcas' => $marcas]);
+        return view('marca.lista', ['marcas' => $marcas]);
     }
 
     /**
@@ -28,7 +28,7 @@ class MarcaController extends Controller
      */
     public function create()
     {
-        //
+        return view('marca.create');
     }
 
     /**
@@ -36,7 +36,13 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nombre' => 'required',
+        ]);
+
+        $this->marcas->insertarMarca($validated);
+
+        return redirect()->action([MarcaController::class, 'index']);
     }
 
     /**
