@@ -4,15 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repository\CocheRepository;
+use App\Repository\MarcaRepository;
 
 class CocheController extends Controller
 {
+    protected CocheRepository $coches;
+
+    public function __construct(CocheRepository $coches)
+    {
+        $this->coches=$coches;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $coches = $this->coches->getAll();
+        return view('coches.lista', ['coches' => $coches]);
     }
 
     /**
@@ -20,7 +28,8 @@ class CocheController extends Controller
      */
     public function create()
     {
-        return view('coches.create');
+        $marcas = app(MarcaRepository::class)->getAll();
+        return view('coches.create', ['marcas' => $marcas]);
     }
 
     /**
