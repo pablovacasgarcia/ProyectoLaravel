@@ -27,4 +27,18 @@ class MarcaRepository
     public function show($id){
         return Coche::where('marca_id', $id)->get();
     }
+
+    public function getMarca($id){
+        return Marca::find($id);
+    }
+
+    public function editarMarca($marca, $id):void{
+        Marca::where('id', $id)->update([
+            'nombre' => $marca['nombre']
+        ]);
+    }
+
+    public function borrarMarca($id):void{
+        Marca::destroy($id);
+    }
 }
