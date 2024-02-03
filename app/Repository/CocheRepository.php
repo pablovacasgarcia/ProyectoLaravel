@@ -15,13 +15,18 @@ class CocheRepository
     }
 
     public function insertarCoches($coche):void{
-
+        
+        $imagen = $coche['imagen'];
+        $originalName = $imagen->getClientOriginalName();
         Coche::create([
             'modelo' => $coche['modelo'],
             'precio' => $coche['precio'],
-            'imagen' => $coche['imagen'],
+            'imagen' => $originalName,
             'marca_id' => $coche['marca_id']
         ]);
+
+        $destinationPath = public_path('/img');
+        $imagenSubida = $imagen->move($destinationPath, $originalName);
     }
 
     public static function getAll(){

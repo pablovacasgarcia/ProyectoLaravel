@@ -48,7 +48,7 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('coches.create')">
+                        <x-dropdown-link :href="route('coches.index')">
                             {{ __('Gestionar Coches') }}
                         </x-dropdown-link>
 
