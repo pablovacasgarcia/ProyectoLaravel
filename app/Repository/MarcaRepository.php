@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Models\Coche;
 use App\Models\Marca;
 
 class MarcaRepository
@@ -21,5 +22,9 @@ class MarcaRepository
 
     public static function getAll(){
         return Marca::all();
+    }
+
+    public function show($id){
+        return Coche::where('marca_id', $id)->get();
     }
 }
