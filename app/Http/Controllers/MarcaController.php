@@ -19,7 +19,8 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        //
+        $marcas = $this->marcas->getAll();
+        return view('marcas.lista', ['marcas' => $marcas]);
     }
 
     /**

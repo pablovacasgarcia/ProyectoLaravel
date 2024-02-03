@@ -20,7 +20,7 @@
                             {{ $marca['nombre'] }}
                         </x-nav-link>
                     @endforeach
-                    
+
                 </div>
             </div>
 
@@ -50,6 +50,10 @@
 
                         <x-dropdown-link :href="route('coches.index')">
                             {{ __('Gestionar Coches') }}
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('marcas.index')">
+                            {{ __('Gestionar Marcas') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
