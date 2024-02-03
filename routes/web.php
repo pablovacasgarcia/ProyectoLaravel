@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('coches', CocheController::class);
-Route::resource('marca', MarcaController::class);
+Route::resource('coches', CocheController::class)->middleware(['auth', 'verified']);
+Route::resource('marca', MarcaController::class)->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
