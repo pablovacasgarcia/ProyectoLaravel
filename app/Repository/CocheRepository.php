@@ -15,7 +15,7 @@ class CocheRepository
     }
 
     public function insertarCoches($coche):void{
-        
+
         Coche::create([
             'modelo' => $coche['modelo'],
             'precio' => $coche['precio'],
@@ -26,5 +26,9 @@ class CocheRepository
 
     public static function getAll(){
         return Coche::all();
+    }
+
+    public function show($id){
+        $this->model->find($id);
     }
 }

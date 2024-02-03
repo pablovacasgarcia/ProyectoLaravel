@@ -32,4 +32,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('coches', CocheController::class);
+Route::resource('marca', MarcaController::class);
+
 require __DIR__.'/auth.php';
