@@ -58,7 +58,7 @@ class MarcaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('marca.edit', ['marca'=>$this->marcas->getMarca($id)]);
     }
 
     /**
@@ -66,7 +66,13 @@ class MarcaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'nombre' => 'required',
+        ]);
+
+        $this->marcas->editarMarca($validated, $id);
+
+        return redirect()->action([MarcaController::class, 'index']);
     }
 
     /**
@@ -74,6 +80,7 @@ class MarcaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->marcas->borrarMarca($id);
+        return redirect()->action([MarcaController::class, 'index']);
     }
 }

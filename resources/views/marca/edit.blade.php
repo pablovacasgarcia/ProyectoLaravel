@@ -1,7 +1,8 @@
+
 <x-app-layout>
     <div class="row">
         <div class="col-sm-8 offset-sm-2">
-            <h1 class="display-3">Añadir marca</h1>
+            <h1 class="display-3">Editar marca</h1>
             <div>
                 <a style="margin: 19px;" href="{{ route('marca.index')}}" class="btn btn-primary">Volver</a>
             </div>
@@ -15,18 +16,22 @@
                         </ul>
                     </div><br />
                 @endif
-                <form method="post" action="{{ route('marca.store') }}" enctype="multipart/form-data">
+                <form method="post"  action="{{ route('marca.update', $marca->id)   }}" >
                     @csrf
+                    @method("PUT")
+                    
+
                     <div class="form-group">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre"/>
+                        <label for="nombre">Marca:</label>
+                        <input value="{{$marca->nombre}}" type="text" class="form-control" name="nombre" id="nombre"/>
                     </div>
+                    
+                    
 
-
-                    <button type="submit" class="btn btn-primary">Añadir marca</button>
+                    <button type="submit" class="btn btn-primary">Editar marca</button>
                 </form>
             </div>
-
+            
 
         </div>
     </div>
