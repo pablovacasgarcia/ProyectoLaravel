@@ -38,9 +38,11 @@
                 dateClick: function (info) {
                     // Comprobar si el día está reservado
                     var isReserved = reservedDates.includes(info.dateStr);
+                    // Comprobar si el día es un domingo
+                    var isSunday = info.date.getDay() === 0;
 
-                    // Seleccionar el nuevo día si no está reservado
-                    if (!isReserved) {
+                    // Seleccionar el nuevo día si no está reservado y no es un domingo
+                    if (!isReserved && !isSunday) {
                         // Desseleccionar el día anterior
                         if (selectedDate) {
                             var prevDayEl = document.querySelector('.selected-day');
@@ -60,6 +62,7 @@
             calendar.render();
         });
     </script>
+
 
     </head>
     <body>
