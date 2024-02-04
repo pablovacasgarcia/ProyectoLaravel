@@ -38,7 +38,7 @@ class CocheController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'modelo' => 'required|max:75|min:3|alpha',
+            'modelo' => 'required|max:75|min:3',
             'precio' => 'required|numeric|min:0|not_in:0|',
             'imagen' => 'required',
             'marca_id' => 'required|numeric|min:1'
@@ -72,7 +72,7 @@ class CocheController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+
         $validated = $request->validate([
             'modelo' => 'required|alpha|max:75|min:3',
             'precio' => 'required|numeric|min:0',
@@ -92,5 +92,5 @@ class CocheController extends Controller
         $this->coches->borrarCoche($id);
         return redirect()->action([CocheController::class, 'index']);
     }
-    
+
 }

@@ -24,9 +24,10 @@ class CitaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($coche_id)
     {
-        //
+        $citas = $this->citas->getAll();
+        return view('citas.create', ['coche_id' => $coche_id, 'citas'=>$citas]);
     }
 
     /**
@@ -34,7 +35,16 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'fecha' => 'required',
+        ]);
+
+        $validated['coche_id']=$request['coche_id'];
+        $validated['user_id']=auth()->user()->id;
+
+        $this->citas->insertarCita($validated);
+
+        return redirect()->action([CitaController::class, 'index']);
     }
 
     /**

@@ -35,5 +35,7 @@ Route::middleware('auth')->group(function () {
 Route::resource('coches', CocheController::class)->middleware(['auth', 'verified']);
 Route::resource('marca', MarcaController::class)->middleware(['auth', 'verified']);
 Route::resource('citas', CitaController::class)->middleware(['auth', 'verified']);
+Route::get('citas/create/{coche_id}', [CitaController::class, 'create'])->name('citas.create');
+
 
 require __DIR__.'/auth.php';

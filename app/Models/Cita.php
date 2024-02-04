@@ -11,7 +11,7 @@ class Cita extends Model
 
     protected $table = 'citas';
 
-    protected $fillable = ['fecha'];
+    protected $fillable = ['fecha', 'coche_id', 'user_id'];
 
     protected $guarded = ['id'];
     protected  $primaryKey = 'id';
