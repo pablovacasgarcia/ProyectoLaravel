@@ -8,6 +8,7 @@
         @foreach ($citas as $cita)
             <tr>
                 <td>{{$cita->fecha}}</td>
+                <td>{{$cita->id_usuario}}</td>
             </tr>
         @endforeach
     </table>
