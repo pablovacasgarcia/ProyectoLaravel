@@ -1,16 +1,15 @@
 
 <x-app-layout>
-    <table >
+    <table>
         <tr>
             <th>Fecha</th>
-            <th>ID Cliente</th>
             <th>ID Coche</th>
             <th>Acciones</th>
         </tr>
         @foreach ($citas as $cita)
             <tr>
                 <td>{{$cita->fecha}}</td>
-                <td >{{$cita->user_id}}</td>
+                <td>{{$cita->user_id}}</td>
                 <td>{{$cita->coche_id}}</td>
                 <td>
                     <form action="{{ route('citas.destroy', $cita->id) }}" method="post">
@@ -18,7 +17,6 @@
                         @method('DELETE')
                         <button type="submit">Borrar</button>
                     </form>
-                </td>
             </tr>
         @endforeach
     </table>

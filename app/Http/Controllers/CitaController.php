@@ -44,7 +44,7 @@ class CitaController extends Controller
 
         $this->citas->insertarCita($validated);
 
-        return redirect()->action([CitaController::class, 'index']);
+        return redirect()->action([CitaController::class, 'show'], ['cita' => auth()->user()->id]);
     }
 
     /**
@@ -52,7 +52,9 @@ class CitaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $citas = $this->citas->getCitasByUser($id);
+
+        return view('citas.citasByUser', ['citas' => $citas]);
     }
 
     /**
@@ -76,6 +78,7 @@ class CitaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->citas->deleteCita($id);
+        return redirect()->action([CitaController::class, 'index']);
     }
 }

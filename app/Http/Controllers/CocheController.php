@@ -13,6 +13,7 @@ class CocheController extends Controller
     public function __construct(CocheRepository $coches)
     {
         $this->coches=$coches;
+        
     }
     /**
      * Display a listing of the resource.

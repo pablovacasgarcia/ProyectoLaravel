@@ -14,6 +14,14 @@ class CitaRepository
         ]);
     }
 
+    public function getCitasByUser($user_id){
+        return Cita::where('user_id', $user_id)->get();
+    }
+
+    public function deleteCita($id){
+        Cita::destroy($id);
+    }
+
     public static function getAll(){
         return Cita::all();
     }
