@@ -38,10 +38,10 @@ class CocheController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'modelo' => 'required',
-            'precio' => 'required',
+            'modelo' => 'required|max:75|min:3|alpha',
+            'precio' => 'required|numeric|min:0|not_in:0|',
             'imagen' => 'required',
-            'marca_id' => 'required'
+            'marca_id' => 'required|numeric|min:1'
         ]);
 
         $this->coches->insertarCoches($validated);
@@ -74,9 +74,9 @@ class CocheController extends Controller
     {
         
         $validated = $request->validate([
-            'modelo' => 'required',
-            'precio' => 'required',
-            'marca_id' => 'required'
+            'modelo' => 'required|alpha|max:75|min:3',
+            'precio' => 'required|numeric|min:0',
+            'marca_id' => 'required|numeric|min:1'
         ]);
 
         $this->coches->editarCoche($validated, $id);
