@@ -28,7 +28,11 @@ class MarcaController extends Controller
      */
     public function create()
     {
-        return view('marca.create');
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            return view('marca.create');
+        }
     }
 
     /**
@@ -36,13 +40,17 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'nombre' => 'required',
-        ]);
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            $validated = $request->validate([
+                'nombre' => 'required',
+            ]);
 
-        $this->marcas->insertarMarca($validated);
+            $this->marcas->insertarMarca($validated);
 
-        return redirect()->action([MarcaController::class, 'index']);
+            return redirect()->action([MarcaController::class, 'index']);
+        }
     }
 
     /**
@@ -58,7 +66,11 @@ class MarcaController extends Controller
      */
     public function edit(string $id)
     {
-        return view('marca.edit', ['marca'=>$this->marcas->getMarca($id)]);
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            return view('marca.edit', ['marca' => $this->marcas->getMarca($id)]);
+        }
     }
 
     /**
@@ -66,13 +78,17 @@ class MarcaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validated = $request->validate([
-            'nombre' => 'required',
-        ]);
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            $validated = $request->validate([
+                'nombre' => 'required',
+            ]);
 
-        $this->marcas->editarMarca($validated, $id);
+            $this->marcas->editarMarca($validated, $id);
 
-        return redirect()->action([MarcaController::class, 'index']);
+            return redirect()->action([MarcaController::class, 'index']);
+        }
     }
 
     /**
@@ -80,7 +96,11 @@ class MarcaController extends Controller
      */
     public function destroy(string $id)
     {
-        $this->marcas->borrarMarca($id);
-        return redirect()->action([MarcaController::class, 'index']);
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            $this->marcas->borrarMarca($id);
+            return redirect()->action([MarcaController::class, 'index']);
+        }
     }
 }

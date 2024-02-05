@@ -5,6 +5,10 @@
             margin: 0 auto;
             color: white;
         }
+        #calendar .fc-day:hover {
+            background-color: rgba(129, 129, 129, 0.56); /* Cambia este color al color deseado para el hover */
+            cursor: pointer;
+        }
     </style>
 
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
