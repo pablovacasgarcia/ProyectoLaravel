@@ -195,7 +195,7 @@
 
         .home {
             position: relative;
-            margin-top: -10vh;
+            padding-top: -10vh;
             display: -ms-grid;
             display: grid;
             -ms-grid-columns: 1fr;
