@@ -67,3 +67,101 @@ h1{
     object-fit: cover;
 }
 
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.formulario-inputs{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    background-color: #f3f4f6;
+}
+
+.formulario-inputs input{
+   border-radius: 10px;
+   border: 1px solid #1f2937;
+}
+.formulario-inputs input:focus{
+    border: 1px solid #1f2937;
+    box-shadow: 0 0 10px 0px #1f2937;
+ }
+
+.formulario-inputs select{
+    border-radius: 10px;
+    border: 1px solid #1f2937;
+}
+
+.formulario-inputs select:focus{
+    box-shadow:     0 0 10px 0px #1f2937;
+ }
+
+
+
+.formulario-inputs button{
+    background-color: #1f2937;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.formulario-inputs button:hover{
+    border: 1px solid #1f2937;
+    background-color: white;
+    color: #1f2937;
+    transition: 0.5s;
+}
+
+.custum-file-upload {
+    height: 90px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1f2937;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 48px 35px -48px rgba(0,0,0,0.1);
+  }
+  
+  .custum-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custum-file-upload .icon svg {
+    height: 30px;
+    fill: rgba(75, 85, 99, 1);
+  }
+  
+  .custum-file-upload .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custum-file-upload .text span {
+    font-weight: 400;
+    color: rgba(75, 85, 99, 1);
+  }
+  
+  .custum-file-upload input {
+    display: none;
+  }
