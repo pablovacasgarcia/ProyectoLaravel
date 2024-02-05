@@ -42,7 +42,7 @@
             box-sizing: border-box;
             background-color: white;
             color: rgb(17 24 39 / var(--tw-bg-opacity));
-            width: 5rem !important;
+            width: 7rem !important;
             border-radius: 10px;
             margin: 0.3rem;
             width: 200px;

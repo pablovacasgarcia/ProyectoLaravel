@@ -15,4 +15,5 @@
             </x-nav-link>
         @endforeach
     </div>
+
 </x-app-layout>
