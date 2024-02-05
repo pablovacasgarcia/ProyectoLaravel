@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <img class="block h-12 w-auto fill-current text-gray-800 dark:text-gray-200" src="../img/PMJLogo.png"/>
                     </a>
                 </div>
 
@@ -40,7 +40,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                    
+
                         <x-dropdown-link :href=" route('citas.show',$id = Auth::user()->id)">
                             {{ __('Mis citas') }}
                         </x-dropdown-link>
