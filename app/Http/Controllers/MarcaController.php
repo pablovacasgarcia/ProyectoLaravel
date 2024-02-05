@@ -58,7 +58,7 @@ class MarcaController extends Controller
      */
     public function show(string $id)
     {
-        return view('marca.coches', ['coches'=>$this->marcas->show($id)]);
+        return view('marca.coches', ['coches'=>$this->marcas->show($id), 'marca'=>$this->marcas->getMarca($id)]);
     }
 
     /**

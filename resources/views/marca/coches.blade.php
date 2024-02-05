@@ -1,5 +1,7 @@
 <x-app-layout>
+<h1>{{$marca['nombre']}}</h1>
     <div class="coches">
+        
         @foreach($coches as $coche)
             <x-nav-link class="coche" :href="route('coches.show', $coche['id'])">
                 <div class="cocheDatos">
