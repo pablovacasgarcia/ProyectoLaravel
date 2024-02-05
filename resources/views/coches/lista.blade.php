@@ -13,7 +13,12 @@
                 <td>{{$coche->modelo}}</td>
                 <td>{{$coche->precio}}€</td>
                 <td><img src="../img/{{$coche['imagen']}}" alt="coche"></td>
-                <td>{{$coche->marca_id}}</td>
+                <td>
+                    <?php
+                    $marca = \App\Repository\MarcaRepository::getDatos($coche->marca_id);
+                    echo $marca ? $marca->nombre : 'Marca no encontrada';
+                    ?>
+                </td>
 
                 <td>
                     

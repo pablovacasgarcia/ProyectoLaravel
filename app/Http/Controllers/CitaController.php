@@ -6,6 +6,7 @@ use App\Models\Marca;
 use App\Repository\CitaRepository;
 use App\Repository\CocheRepository;
 use App\Repository\MarcaRepository;
+use App\Repository\UserRepository;
 use Config;
 use Illuminate\Http\Request;
 use Mail;
@@ -88,8 +89,13 @@ class CitaController extends Controller
      */
     public function destroy(string $id)
     {
+        $idUsuario = CitaRepository::getNombreCita($id)->user_id;
+        $email = UserRepository::getDatos($idUsuario)->email;
+        $nombre = UserRepository::getDatos($idUsuario)->name;
         $this->citas->deleteCita($id);
+        $this->enviarCancelacion($email,$nombre);
         return redirect()->action([CitaController::class, 'show'], ['cita' => auth()->user()->id]);
+
     }
 
     public function enviarConfirmacion($datos)
@@ -110,6 +116,19 @@ class CitaController extends Controller
             $msj->subject($subject);
             $msj->to($for);
             $msj->text("Hola $nombre. Has reservado una cita para la fecha: $fecha, para ver el $marca, $datosCoche->modelo.");
+        });
+
+        return redirect()->back();
+    }
+    public function enviarCancelacion($email,$nombre)
+    {
+        $subject = "Confirmacion de cancelación de cita.";
+        $for = $email;
+        Mail::send([], [], function ($msj) use ($subject, $for,$nombre) {
+            $msj->from(env('MAIL_USERNAME'), "Concesionario PMJ");
+            $msj->subject($subject);
+            $msj->to($for);
+            $msj->text("Hola $nombre su cita ha sido cancelada con éxito. Recuerda que puedes reservar una nueva cita en nuetra página.");
         });
 
         return redirect()->back();

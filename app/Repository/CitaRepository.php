@@ -25,4 +25,8 @@ class CitaRepository
     public static function getAll(){
         return Cita::all();
     }
+
+    public static function getNombreCita($cita_id){
+        return Cita::where('id', $cita_id)->first();
+    }
 }
