@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Marca;
 use App\Repository\CitaRepository;
+use App\Repository\CocheRepository;
+use App\Repository\MarcaRepository;
 use Config;
 use Illuminate\Http\Request;
 use Mail;
@@ -94,20 +97,21 @@ class CitaController extends Controller
         $fecha = $datos['fecha'];
         $coche = $datos['coche_id'];
 
-        $datosCoche = ;
+        $datosCoche = CocheRepository::getDatos($coche);
+        $marca = MarcaRepository::getDatos($datosCoche->marca_id)->nombre;
 
         $nombre = auth()->user()->name;
-    
+
         $subject = "Confirmacion de cita.";
         $for = auth()->user()->email;
-    
-        Mail::send([], [], function ($msj) use ($subject, $for, $fecha, $coche, $nombre) {
+
+        Mail::send([], [], function ($msj) use ($subject, $for, $fecha, $coche, $nombre, $datosCoche, $marca) {
             $msj->from(env('MAIL_USERNAME'), "Concesionario PMJ");
             $msj->subject($subject);
             $msj->to($for);
-            $msj->text("Hola $nombre. Has reservado una cita para la fecha: $fecha, para ver el coche: $coche.");
+            $msj->text("Hola $nombre. Has reservado una cita para la fecha: $fecha, para ver el $marca, $datosCoche->modelo.");
         });
-    
+
         return redirect()->back();
     }
 }

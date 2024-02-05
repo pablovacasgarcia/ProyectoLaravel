@@ -15,7 +15,7 @@ class CocheRepository
     }
 
     public function insertarCoches($coche):void{
-        
+
         $imagen = $coche['imagen'];
         $originalName = $imagen->getClientOriginalName();
         Coche::create([
@@ -48,5 +48,9 @@ class CocheRepository
 
     public function show($id){
         return $this->model->find($id);
+    }
+
+    public static function getDatos($id){
+        return Coche::where('id', $id)->first();
     }
 }

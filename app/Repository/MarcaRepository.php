@@ -41,4 +41,8 @@ class MarcaRepository
     public function borrarMarca($id):void{
         Marca::destroy($id);
     }
+
+    public static function getDatos($id){
+        return Marca::where('id', $id)->first();
+    }
 }
