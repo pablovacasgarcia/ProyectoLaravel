@@ -1,9 +1,9 @@
 <x-app-layout>
     <div class="detallesCoche">
         <div>
-            <h2>Modelo: {{$datos['modelo']}}</h2>
-            <h3>Precio: {{$datos['precio']}}€</h3>
-            <a href="{{ route('citas.create', ['coche_id' => $datos['id']]) }}"><button class="boton">Reservar cita</button></a>
+                <h2>{{$datos['modelo']}}</h2>
+                <h3>{{$datos['precio']}}€</h3>
+                <a href="{{ route('citas.create', ['coche_id' => $datos['id']]) }}"><button class="boton">Reservar cita</button></a>
         </div>
         <div>
             <img src="../img/{{$datos['imagen']}}" alt="coche" width="100px">
@@ -15,19 +15,31 @@
 
         .detallesCoche{
             display: flex;
-            margin-left: 200px;
-            margin-top: 150px;
+            flex-direction: column;
+            margin-left: 20vw;
+            margin-top: 5vh;
+        }
+        .detallesCoche>div{
+            display: flex;
+            width: 60vw;
+            justify-content: space-between;
+            align-items: center;
         }
         img{
-            margin-left: 100px;
-            width: 600px;
-            height: 25rem;
+            width: 60vw;
+            height: 30rem;
             border-radius: 20px;
+            object-fit: cover;
         }
+
+        h2{
+            font-size: 200%;
+        }
+
         h2, h3{
             color: white;
             padding: 1rem;
-        } 
+        }
         .boton{
             top: -20%;
             border: 1px solid white;
