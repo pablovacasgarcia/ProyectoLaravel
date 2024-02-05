@@ -1165,10 +1165,13 @@
         left: 0;
         width: 100%;
         height: 100%;
-        outline: 0.5rem solid var(--mainWhite);
-        outline-offset: -2rem;
         transition: all 1s ease-in-out;
         transform: scale(0);
+        background-image: url("../img/PMJLogoFondo.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.8;
     }
     .gallery-item:hover:after {
         transform: scale(1);
