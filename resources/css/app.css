@@ -124,8 +124,8 @@ h1{
 }
 
 .custum-file-upload {
-    height: 90px;
-    width: 180px;
+    height: 15vh;
+    width: 15vw;
     display: flex;
     flex-direction: column;
     align-items: space-between;
@@ -139,29 +139,29 @@ h1{
     border-radius: 10px;
     box-shadow: 0px 48px 35px -48px rgba(0,0,0,0.1);
   }
-  
+
   .custum-file-upload .icon {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .custum-file-upload .icon svg {
     height: 30px;
     fill: rgba(75, 85, 99, 1);
   }
-  
+
   .custum-file-upload .text {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .custum-file-upload .text span {
     font-weight: 400;
     color: rgba(75, 85, 99, 1);
   }
-  
+
   .custum-file-upload input {
     display: none;
   }
