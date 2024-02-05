@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Repository\CitaRepository;
+use Config;
 use Illuminate\Http\Request;
-
+use Mail;
+use Symfony\Component\Mime\Part\TextPart;
 class CitaController extends Controller
 {
 
@@ -48,7 +50,7 @@ class CitaController extends Controller
         $validated['user_id']=auth()->user()->id;
 
         $this->citas->insertarCita($validated);
-
+        $this->enviarConfirmacion($validated);
         return redirect()->action([CitaController::class, 'show'], ['cita' => auth()->user()->id]);
     }
 
@@ -85,5 +87,27 @@ class CitaController extends Controller
     {
         $this->citas->deleteCita($id);
         return redirect()->action([CitaController::class, 'index']);
+    }
+
+    public function enviarConfirmacion($datos)
+    {
+        $fecha = $datos['fecha'];
+        $coche = $datos['coche_id'];
+
+        $datosCoche = ;
+
+        $nombre = auth()->user()->name;
+    
+        $subject = "Confirmacion de cita.";
+        $for = auth()->user()->email;
+    
+        Mail::send([], [], function ($msj) use ($subject, $for, $fecha, $coche, $nombre) {
+            $msj->from(env('MAIL_USERNAME'), "Concesionario PMJ");
+            $msj->subject($subject);
+            $msj->to($for);
+            $msj->text("Hola $nombre. Has reservado una cita para la fecha: $fecha, para ver el coche: $coche.");
+        });
+    
+        return redirect()->back();
     }
 }
