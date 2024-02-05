@@ -873,11 +873,11 @@
                         <a href="#" class="footer-icon">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://www.instagram.com/this.poori/" class="footer-icon">
+                        <a href="https://www.instagram.com/" class="footer-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a
-                            href="https://www.linkedin.com/in/pooria-faramarzian-1860191b0/"
+                            href="https://www.linkedin.com/"
                             class="footer-icon"
                         >
                             <i class="fab fa-linkedin"></i>
