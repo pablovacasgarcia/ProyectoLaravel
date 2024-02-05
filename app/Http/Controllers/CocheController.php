@@ -13,15 +13,19 @@ class CocheController extends Controller
     public function __construct(CocheRepository $coches)
     {
         $this->coches=$coches;
-        
+
     }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $coches = $this->coches->getAll();
-        return view('coches.lista', ['coches' => $coches]);
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            $coches = $this->coches->getAll();
+            return view('coches.lista', ['coches' => $coches]);
+        }
     }
 
     /**
@@ -29,8 +33,12 @@ class CocheController extends Controller
      */
     public function create()
     {
-        $marcas = app(MarcaRepository::class)->getAll();
-        return view('coches.create', ['marcas' => $marcas]);
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            $marcas = app(MarcaRepository::class)->getAll();
+            return view('coches.create', ['marcas' => $marcas]);
+        }
     }
 
     /**
@@ -38,16 +46,20 @@ class CocheController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'modelo' => 'required|max:75|min:3',
-            'precio' => 'required|numeric|min:0|not_in:0|',
-            'imagen' => 'required',
-            'marca_id' => 'required|numeric|min:1'
-        ]);
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            $validated = $request->validate([
+                'modelo' => 'required|max:75|min:3',
+                'precio' => 'required|numeric|min:0|not_in:0|',
+                'imagen' => 'required',
+                'marca_id' => 'required|numeric|min:1'
+            ]);
 
-        $this->coches->insertarCoches($validated);
+            $this->coches->insertarCoches($validated);
 
-        return redirect()->action([CocheController::class, 'index']);
+            return redirect()->action([CocheController::class, 'index']);
+        }
     }
 
     /**
@@ -63,8 +75,12 @@ class CocheController extends Controller
      */
     public function edit(string $id)
     {
-        $marcas = app(MarcaRepository::class)->getAll();
-        return view('coches.edit', ['marcas' => $marcas, 'datos'=>$this->coches->show($id)]);
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            $marcas = app(MarcaRepository::class)->getAll();
+            return view('coches.edit', ['marcas' => $marcas, 'datos' => $this->coches->show($id)]);
+        }
 
     }
 
@@ -73,16 +89,19 @@ class CocheController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            $validated = $request->validate([
+                'modelo' => 'required|max:75|min:3',
+                'precio' => 'required|numeric|min:0',
+                'marca_id' => 'required|numeric|min:1'
+            ]);
 
-        $validated = $request->validate([
-            'modelo' => 'required|alpha|max:75|min:3',
-            'precio' => 'required|numeric|min:0',
-            'marca_id' => 'required|numeric|min:1'
-        ]);
+            $this->coches->editarCoche($validated, $id);
 
-        $this->coches->editarCoche($validated, $id);
-
-        return redirect()->action([CocheController::class, 'index']);
+            return redirect()->action([CocheController::class, 'index']);
+        }
     }
 
     /**
@@ -90,8 +109,12 @@ class CocheController extends Controller
      */
     public function destroy(string $id)
     {
-        $this->coches->borrarCoche($id);
-        return redirect()->action([CocheController::class, 'index']);
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            $this->coches->borrarCoche($id);
+            return redirect()->action([CocheController::class, 'index']);
+        }
     }
 
 }

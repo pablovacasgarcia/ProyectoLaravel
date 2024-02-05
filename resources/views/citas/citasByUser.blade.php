@@ -15,7 +15,7 @@
                     <form action="{{ route('citas.destroy', $cita->id) }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit">Borrar</button>
+                        <button type="submit">Cancelar cita</button>
                     </form>
             </tr>
         @endforeach

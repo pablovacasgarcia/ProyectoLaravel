@@ -17,8 +17,13 @@ class CitaController extends Controller
      */
     public function index()
     {
-        $citas = $this->citas->getAll();
-        return view('citas.lista', ['citas' => $citas]);
+        if(auth()->user()->rol != 'admin'){
+            return view('dashboard');
+        } else {
+            $citas = $this->citas->getAll();
+            return view('citas.lista', ['citas' => $citas]);
+        }
+
     }
 
     /**
