@@ -89,7 +89,7 @@ class CitaController extends Controller
     public function destroy(string $id)
     {
         $this->citas->deleteCita($id);
-        return redirect()->action([CitaController::class, 'index']);
+        return redirect()->action([CitaController::class, 'show'], ['cita' => auth()->user()->id]);
     }
 
     public function enviarConfirmacion($datos)
