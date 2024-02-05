@@ -457,59 +457,7 @@
 
                 <!--Question section-->
                 <div class="question section py-2">
-                    <div class="container">
-                        <div class="row">
-                            <!--single question #1 -->
-                            <div
-                                class="
-              question-gray
-              my-2
-              p-4
-              col-10
-              mx-auto
-              col-md-6
-              d-flex
-              justify-content-between
-            "
-                            >
-                                <a href="" class="question-icon mr-3">
-                                    <i class="fas fa-search fa-fw"></i>
-                                </a>
-                                <div class="question-text w-75">
-                                    <h4 class="question-title text-capitalize font-weight-bold">
-                                        Are You Looking For A Car?
-                                    </h4>
-                                    <p class="question-info">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                    </p>
-                                </div>
-                            </div>
-                            <!--single question #2-->
-                            <div
-                                class="
-              question-yellow
-              my-2
-              p-4
-              col-10
-              mx-auto
-              col-md-6
-              d-flex
-              justify-content-between
-            "
-                            >
-                                <a href="" class="question-icon mr-3">
-                                    <i class="fas fa-dollar-sign fa-fw"></i>
-                                </a>
-                                <div class="question-text w-75">
-                                    <h4 class="question-title text-capitalize font-weight-bold">
-                                        Do You Want To Sell A Car?
-                                    </h4>
-                                    <p class="question-info">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="container" style="height: 20vh;">
                     </div>
                 </div>
                 <!--End Question section-->
@@ -724,18 +672,8 @@
                         <div class="row">
                             <div class="col-8 mx-auto col-md-6">
                                 <form action="">
-                                    <div class="form-group">
-                                        <input
-                                            type="email"
-                                            class="form-control contact-input p-3"
-                                            placeholder="Enter your email"
-                                        />
-                                        <button
-                                            type="submit"
-                                            class="btn btn-block btn-outline-secondary contact-btn"
-                                        >
-                                            Submit
-                                        </button>
+                                    <div class="form-group" style="height: 20vh">
+
                                     </div>
                                 </form>
                             </div>
@@ -770,7 +708,7 @@
                 <i class="fas fa-cogs"></i>
               </span>
                                     <h6 class="text-capitalize service-title">vehicle</h6>
-                                    <h5 class="text-uppercase font-weight-bold">vehicle</h5>
+                                    <h5 class="text-uppercase font-weight-bold">repairing</h5>
                                 </div>
                             </div>
                             <!--End Col-->
