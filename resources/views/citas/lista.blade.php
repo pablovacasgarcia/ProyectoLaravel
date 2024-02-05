@@ -21,4 +21,9 @@
             </tr>
         @endforeach
     </table>
+
+
+    <style>
+        
+    </style>
 </x-app-layout>
