@@ -51,11 +51,11 @@
                                 <h5 class="title-heading d-inline-block text-uppercase p-2">
                                     the all new
                                 </h5>
-                                <h2 class="text-uppercase my-2 title">2018 mercedes-benz</h2>
-                                <h3 class="text-uppercase">model name</h3>
+                                <h2 class="text-uppercase my-2 title">2024</h2>
+                                <h3 class="text-uppercase">mercedes-benz</h3>
                                 <h6 class="text-capitalize">starts from</h6>
                                 <h2 class="">
-                                    $60.000
+                                    60.000€
                                     <a href="#" class="title-icon">
                                         <i class="fas fa-play"></i>
                                     </a>
@@ -205,7 +205,7 @@
                                                 <h6>model</h6>
                                             </div>
                                             <h5 class="car-value align-self-center py-2 px-3">
-                                                <span class="car-price">$10.000</span>
+                                                <span class="car-price">10.000€</span>
                                             </h5>
                                         </div>
                                     </div>
@@ -249,7 +249,7 @@
                                                 <h6>model</h6>
                                             </div>
                                             <h5 class="car-value align-self-center py-2 px-3">
-                                                <span class="car-price">$10.000</span>
+                                                <span class="car-price">10.000€</span>
                                             </h5>
                                         </div>
                                     </div>
@@ -293,7 +293,7 @@
                                                 <h6>model</h6>
                                             </div>
                                             <h5 class="car-value align-self-center py-2 px-3">
-                                                <span class="car-price">$10.000</span>
+                                                <span class="car-price">10.000€</span>
                                             </h5>
                                         </div>
                                     </div>
@@ -337,7 +337,7 @@
                                                 <h6>model</h6>
                                             </div>
                                             <h5 class="car-value align-self-center py-2 px-3">
-                                                <span class="car-price">$10.000</span>
+                                                <span class="car-price">10.000€</span>
                                             </h5>
                                         </div>
                                     </div>
@@ -381,7 +381,7 @@
                                                 <h6>model</h6>
                                             </div>
                                             <h5 class="car-value align-self-center py-2 px-3">
-                                                <span class="car-price">$10.000</span>
+                                                <span class="car-price">10.000€</span>
                                             </h5>
                                         </div>
                                     </div>
@@ -425,7 +425,7 @@
                                                 <h6>model</h6>
                                             </div>
                                             <h5 class="car-value align-self-center py-2 px-3">
-                                                <span class="car-price">$10.000</span>
+                                                <span class="car-price">10.000€</span>
                                             </h5>
                                         </div>
                                     </div>
@@ -586,7 +586,7 @@
                                         alt=""
                                     />
                                     <a href="#" class="featured-link">
-                                        <i class="fas fa-search"></i>
+                                        <img src="../img/PMJLogoFondo.png">
                                     </a>
                                 </div>
                             </div>
@@ -873,11 +873,11 @@
                         <a href="#" class="footer-icon">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://www.instagram.com/this.poori/" class="footer-icon">
+                        <a href="https://www.instagram.com/" class="footer-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a
-                            href="https://www.linkedin.com/in/pooria-faramarzian-1860191b0/"
+                            href="https://www.linkedin.com/"
                             class="footer-icon"
                         >
                             <i class="fab fa-linkedin"></i>
