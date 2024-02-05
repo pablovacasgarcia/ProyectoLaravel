@@ -8,7 +8,7 @@
 
                         <div class="home__information">
                             <h2 class="home__subtitle">LAMBORGHINI<br>GALLARDO LP560</h2>
-                            <p class="home__description"></p>
+                            <p class="home__description">En Concesionarios PMJ tenemos los mejores coches de lujo, al mejor precio</p>
                         </div>
 
                         <div class="box">
@@ -195,19 +195,19 @@
 
         .home {
             position: relative;
-            padding-top: -10vh;
+            margin-top: -3vh;
             display: -ms-grid;
             display: grid;
             -ms-grid-columns: 1fr;
             grid-template-columns: 1fr;
             row-gap: 2.3rem;
-            height: 100%;
+            height: 80%;
             -ms-flex-line-pack: end;
             align-content: flex-end;
             overflow: hidden; }
         .home__title {
             position: absolute;
-            margin-top: -3vh;
+            margin-top: -5vh;
             font-size: var(--big-font-size);
             -webkit-writing-mode: vertical-rl;
             -ms-writing-mode: tb-rl;
@@ -223,8 +223,8 @@
             z-index: var(--z-normal);
         }
         .home__information {
-            margin-top: 15vh;
-            padding-left: 4.25rem;
+            margin-left: -10vw;
+            margin-top: 10vh;
             padding-right: 2rem;
             color: var(--text-color); }
         .home__subtitle {
@@ -239,7 +239,9 @@
             font-size: 1rem; }
 
         .box {
-            margin-top: 10vh;
+            margin-top: 0;
+            margin-left: 15vw;
+            width: 100%;
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -255,9 +257,8 @@
             border-radius: 1rem;
             text-align: center; }
         .box__medium {
-            width: 150px;
+            width: 100%;
             height: 150px;
-            padding: 1.5rem .75rem;
             margin-right: 2rem; }
         .box__medium-title {
             font-size: 3rem;
@@ -268,7 +269,7 @@
         .box__medium-detail {
             font-size: var(--small-font-size); }
         .box__small {
-            width: 70px;
+            width: 100px;
             height: 70px;
             padding: .75rem 0;
             margin-bottom: .625rem; }
