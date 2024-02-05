@@ -1,4 +1,9 @@
 <x-app-layout>
+    <style>
+       table{
+        
+       }
+    </style>
     <a href="/coches/create">Nuevo Coche</a>
     <table>
         <tr>
