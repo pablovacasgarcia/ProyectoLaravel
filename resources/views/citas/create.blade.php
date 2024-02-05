@@ -9,6 +9,30 @@
             background-color: rgba(129, 129, 129, 0.56); /* Cambia este color al color deseado para el hover */
             cursor: pointer;
         }
+
+        h2{
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        .boton{
+            border: 1px solid white;
+            box-sizing: border-box;
+            background-color: white;
+            color: rgb(17 24 39 / var(--tw-bg-opacity));
+            width: 7rem !important;
+            border-radius: 10px;
+            width: 200px;
+            margin-top: 10px;
+            margin-left: 700px
+
+        }
+        .boton:hover{
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+            color: white;
+        }
     </style>
 
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
@@ -70,13 +94,13 @@
 
     </head>
     <body>
-    <h2>Seleccionar fecha para cita</h2>
+    <h2>Seleccionar fecha para cita:</h2>
     <form action="{{ route('citas.store') }}" method="post">
         @csrf
         <input type="hidden" name="coche_id" value="{{ $coche_id }}">
         <input type="hidden" name="fecha" id="fecha">
         <div id="calendar"></div>
-        <button type="submit">Guardar cita</button>
+        <button class="boton" type="submit">Guardar cita</button>
     </form>
     </body>
 </x-app-layout>
