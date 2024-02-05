@@ -1,6 +1,5 @@
 <x-app-layout>
 
-    <a href="/coches/create">Nuevo Coche</a>
     <table>
         <tr>
             <th>Modelo</th>
@@ -13,7 +12,7 @@
             <tr>
                 <td>{{$coche->modelo}}</td>
                 <td>{{$coche->precio}}€</td>
-                <td>{{$coche->imagen}}</td>
+                <td><img src="../img/{{$coche['imagen']}}" alt="coche"></td>
                 <td>{{$coche->marca_id}}</td>
 
                 <td>
@@ -28,6 +27,8 @@
             </tr>
         @endforeach
     </table>
+    <a href="/coches/create"> <button  class="nuevoCoche">Registrar un Coche</button></a>
+
 
 
 
@@ -44,7 +45,16 @@
         th, td{
             border: 1px solid white;
             padding: 1rem
-
+        }
+        img{
+            width: 100px;
+        }
+        .nuevoCoche{
+            width: 100vw;
+            text-align: center;
+        }
+        .nuevoCoche:hover{
+            text-decoration: underline
         }
 
         .boton{

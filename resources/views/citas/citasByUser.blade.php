@@ -3,8 +3,8 @@
     <table>
         <tr>
             <th>Fecha</th>
-            <th>ID Coche</th>
             <th>ID Usuario</th>
+            <th>ID Coche</th>
             <th>Acciones</th>
         </tr>
         @foreach ($citas as $cita)
