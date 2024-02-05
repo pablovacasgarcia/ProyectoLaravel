@@ -3,7 +3,7 @@
         <div class="col-sm-8 offset-sm-2">
             <h1 class="display-3">Añadir marca</h1>
             <div class="volver">
-                <a style="margin: 19px;" href="{{ route('marca.index')}}" class="btn btn-primary">Volver</a>
+                <a style="margin: 70px;" class="enlaceButton" href="{{ route('marca.index')}}" class="btn btn-primary">Volver</a>
             </div>
             <div class="formulario">
                 @if ($errors->any())

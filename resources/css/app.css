@@ -72,6 +72,7 @@ h1{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
 }
 .formulario-inputs{
     width: 40%;
@@ -165,3 +166,20 @@ h1{
   .custum-file-upload input {
     display: none;
   }
+
+  .enlaceButton{
+    text-decoration: none;
+    color: white;
+    background-color: #1f2937;
+    padding: 8px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid white;
+  }
+
+    .enlaceButton:hover{
+        background-color: white;
+        color: #1f2937;
+        transition: 0.5s;
+    }

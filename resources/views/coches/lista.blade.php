@@ -1,5 +1,5 @@
 <x-app-layout>
-
+    <h1>Lista de Coches</h1>
     <table>
         <tr>
             <th>Modelo</th>
@@ -32,7 +32,8 @@
             </tr>
         @endforeach
     </table>
-    <a href="/coches/create"> <button  class="nuevoCoche">Registrar un Coche</button></a>
+
+    <a href="/coches/create" class="enlaceButton"> Registrar un Coche</a>
 
 
 
@@ -45,7 +46,8 @@
        table{
             margin: auto;
             border: 1px solid white;
-            margin-top: 10vh;
+            margin-top: 3vh;
+            margin-bottom: 3vh
         }
         th, td{
             border: 1px solid white;
@@ -54,13 +56,7 @@
         img{
             width: 100px;
         }
-        .nuevoCoche{
-            width: 100vw;
-            text-align: center;
-        }
-        .nuevoCoche:hover{
-            text-decoration: underline
-        }
+        
 
         .boton{
             border: 1px solid white;
@@ -77,6 +73,12 @@
         }
         th{
             background-color: rgba(220, 220, 220, 0.362);
+        }
+
+        .enlaceButton{
+            
+            margin-left: 45%;
+           
         }
 
 
