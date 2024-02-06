@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
-            $table->date('fecha');
+            $table->datetimes('fecha');
             $table->unsignedBigInteger('coche_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('coche_id')->references('id')->on('coches')->onDelete('cascade');

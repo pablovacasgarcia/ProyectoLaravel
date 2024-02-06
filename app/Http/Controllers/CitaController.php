@@ -48,15 +48,29 @@ class CitaController extends Controller
     {
         $validated = $request->validate([
             'fecha' => 'required',
+            'hora' => 'required', // Asegúrate de validar también la hora
         ]);
 
-        $validated['coche_id']=$request['coche_id'];
-        $validated['user_id']=auth()->user()->id;
+        // Concatenar la fecha con la hora seleccionada
+        $fechaHora = $validated['fecha'] . ' ' . $validated['hora'];
 
+        // Agregar la hora concatenada al arreglo validado
+        $validated['fecha'] = $fechaHora;
+
+        // Añadir los otros campos necesarios
+        $validated['coche_id'] = $request['coche_id'];
+        $validated['user_id'] = auth()->user()->id;
+
+        // Insertar la cita en la base de datos
         $this->citas->insertarCita($validated);
+
+        // Lógica adicional como enviar confirmación
         $this->enviarConfirmacion($validated);
+
+        // Redireccionar a la vista de la cita
         return redirect()->action([CitaController::class, 'show'], ['cita' => auth()->user()->id]);
     }
+
 
     /**
      * Display the specified resource.
