@@ -27,6 +27,7 @@ class CitaController extends Controller
             return view('dashboard');
         } else {
             $citas = $this->citas->getAll();
+            $citas = $citas->sortBy('fecha');
             return view('citas.lista', ['citas' => $citas]);
         }
 
@@ -78,7 +79,7 @@ class CitaController extends Controller
     public function show(string $id)
     {
         $citas = $this->citas->getCitasByUser($id);
-
+        $citas = $citas->sortBy('fecha');
         return view('citas.citasByUser', ['citas' => $citas]);
     }
 

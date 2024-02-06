@@ -116,6 +116,10 @@ h1{
     cursor: pointer;
 }
 
+table{
+    text-align: center;
+}
+
 .formulario-inputs button:hover{
     border: 1px solid #1f2937;
     background-color: white;

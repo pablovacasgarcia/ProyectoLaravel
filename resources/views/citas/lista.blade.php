@@ -8,18 +8,33 @@
             <th>Acciones</th>
         </tr>
         @foreach ($citas as $cita)
-            <tr>
-                <td>{{$cita->fecha}}</td>
-                <td >{{$cita->user_id}}</td>
-                <td>{{$cita->coche_id}}</td>
-                <td>
-                    <form action="{{ route('citas.destroy', $cita->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class="boton" type="submit">Cancelar cita</button>
-                    </form>
-                </td>
-            </tr>
+            @if(strtotime($cita->fecha) >= strtotime('today'))
+                <tr>
+                    <td>{{$cita->fecha}}</td>
+                    <td >{{$cita->user_id}}</td>
+                    <td>{{$cita->coche_id}}</td>
+                    <td>
+                        <form action="{{ route('citas.destroy', $cita->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="boton" type="submit">Cancelar cita</button>
+                        </form>
+                    </td>
+                </tr>
+            @else
+                <tr class="pasada">
+                    <td>{{$cita->fecha}}</td>
+                    <td >{{$cita->user_id}}</td>
+                    <td>{{$cita->coche_id}}</td>
+                    <td>
+                        <form action="{{ route('citas.destroy', $cita->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="boton" type="submit">Borrar cita</button>
+                        </form>
+                    </td>
+                </tr>
+            @endif
         @endforeach
     </table>
 
@@ -56,7 +71,15 @@
         }
         th{
             background-color: rgba(220, 220, 220, 0.362);
-            
+
+        }
+
+        .pasada{
+            background-color: rgba(251, 251, 252, 0.1);
+        }
+
+        .pasada button{
+            background-color: rgba(251, 251, 252, 0.28);
         }
 
     </style>

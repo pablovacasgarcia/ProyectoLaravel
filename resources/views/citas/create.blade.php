@@ -7,7 +7,7 @@
             font-size: 80%;
         }
         #calendar .fc-day:hover {
-            background-color: rgba(129, 129, 129, 0.56); /* Cambia este color al color deseado para el hover */
+            background-color: rgba(129, 129, 129, 0.26); /* Cambia este color al color deseado para el hover */
             cursor: pointer;
         }
 
@@ -26,7 +26,6 @@
             width: 7rem !important;
             border-radius: 10px;
             margin-top: 10px;
-            margin-left: 700px
 
         }
         .boton:hover{
@@ -36,10 +35,36 @@
 
         .fc-event {
             background-color: rgba(255, 0, 0, 0.37);
-            font-size: 60%;
+            font-size: 70%;
+            text-align: center;
+            border: none;
         }
         .fc-event:hover {
             background-color: rgba(255, 0, 0, 0.19);
+        }
+
+        #hora-container{
+            margin-top: 3vh;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hora-container select{
+            color: black;
+            margin-bottom: 3vh;
+            width: 10vw;
+        }
+
+        #hora-container select option:disabled{
+            background-color: rgba(255, 0, 0, 0.42);
+        }
+
+        .fc-day-sun {
+            background-color: rgba(255, 0, 0, 0.10);
         }
     </style>
 
@@ -48,6 +73,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
             var today = new Date();
+            today.setDate(today.getDate() + 1)
             var selectedDate = null;
 
             var reservedDates = [
@@ -61,15 +87,21 @@
                 validRange: {
                     start: today.toISOString().split('T')[0],
                 },
+                firstDay: 1,
                 events: reservedDates.map(function (date) {
                     var endDate = new Date(date); // Crear una nueva fecha a partir de la fecha de inicio
                     endDate.setHours(endDate.getHours() + 1); // Agregar 1 hora a la fecha de inicio para obtener la fecha de finalización
+                    var formattedTime = new Date(date).toLocaleString('en-US', {
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        hour12: true
+                    });
                     return {
-                        title: 'Reservado',
+                        title: 'Reservado ' + formattedTime,
                         start: date,
-                        end: endDate, // Establecer la fecha de finalización
-                        backgroundColor: 'red',
+                        end: endDate,
                         style: 'background',
+                        allDay: true
                     };
                 }),
 
@@ -95,7 +127,7 @@
                         selectedDate = info.dateStr;
 
                         // Mostrar el input para seleccionar la hora
-                        document.getElementById('hora-container').style.display = 'block';
+                        document.getElementById('hora-container').style.display = 'flex';
 
                         // Limpiar las opciones de horas
                         var horaInput = document.getElementById('hora');
@@ -110,9 +142,10 @@
                                 return new Date(date).getHours() + ':00';
                             });
 
+                        console.log(reservedHours)
                         // Crear opciones de horas disponibles
                         for (var i = 9; i <= 17; i++) {
-                            var hour = i < 10 ? '0' + i + ':00' : i + ':00';
+                            var hour = i + ':00';
                             var option = document.createElement('option');
                             option.value = hour;
                             option.textContent = hour;
@@ -145,9 +178,10 @@
             <label for="hora">Seleccionar hora:</label>
             <select id="hora" name="hora" required>
             </select>
+            <button class="boton" type="submit">Guardar cita</button>
         </div>
 
 
-        <button class="boton" type="submit">Guardar cita</button>
+
     </form>
 </x-app-layout>
