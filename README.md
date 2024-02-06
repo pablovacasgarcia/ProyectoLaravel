@@ -7,60 +7,83 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Concesionario PMJ
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este proyecto representa un concesionario, con vista de administrador y usuario, permite pedir citas para ver un vehiculo y gestionar marcas, coches y citas, para el administrador.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Iniciando el Proyecto
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sigue estos pasos para iniciar el proyecto en tu máquina local.
 
-## Learning Laravel
+### Prerrequisitos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Asegúrate de tener instalados los siguientes programas:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- [PHP](https://www.php.net/downloads)
+- [Composer](https://getcomposer.org/download/)
+- [Node.js](https://nodejs.org/en/download/)
+- [npm](https://www.npmjs.com/get-npm)
+- [Git](https://git-scm.com/downloads)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Pasos de Inicio
 
-## Laravel Sponsors
+1. Clona este repositorio en tu máquina local:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    ```bash
+    git clone https://github.com/pablovacasgarcia/ProyectoLaravel.git
+    ```
 
-### Premium Partners
+2. Navega hasta el directorio del proyecto:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    ```bash
+    cd ProyectoLaravel
+    ```
 
-## Contributing
+3. Instala las dependencias PHP a través de Composer:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    ```bash
+    composer install
+    ```
 
-## Code of Conduct
+4. Instala las dependencias de JavaScript a través de npm:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    npm install
+    ```
 
-## Security Vulnerabilities
+5. Copia el archivo de configuración de entorno y configura tu base de datos:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```bash
+    cp .env.example .env
+    ```
 
-## License
+6. Genera una nueva clave de aplicación:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+    php artisan key:generate
+    ```
+
+7. Ejecuta las migraciones de la base de datos para crear las tablas necesarias:
+
+    ```bash
+    php artisan migrate
+    ```
+
+8. Inicia el servidor de desarrollo:
+
+    ```bash
+    php artisan serve
+    ```
+
+9. Visita `http://localhost` con la ip que genere artisan serve en tu navegador para ver la aplicación en funcionamiento.
+
+## Contribuyentes
+
+- [@pablovacasgarcia](https://github.com/pablovacasgarcia)
+- [@MiguelHurtadoDevelop](https://github.com/MiguelHurtadoDevelop)
+- [@jorgeherrero00](https://github.com/jorgeherrero00)
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
+
