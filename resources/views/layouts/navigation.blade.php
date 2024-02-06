@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img class="block h-12 w-auto fill-current text-gray-800 dark:text-gray-200" src="../img/PMJLogo.png"/>
+                        <img class="block h-12 w-auto fill-current text-gray-800 dark:text-gray-200" src="../img/PMJLogo.png" onerror="this.src='../../img/PMJLogo.png'"/>
                     </a>
                 </div>
 
@@ -46,7 +46,7 @@
                         </x-dropdown-link>
 
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Mi perfil') }}
                         </x-dropdown-link>
 
                         @if(auth()->check() && auth()->user()->rol == 'admin')
@@ -70,7 +70,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Cerrar Sesión') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

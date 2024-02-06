@@ -90,10 +90,6 @@
             calendar.render();
         });
     </script>
-
-
-    </head>
-    <body>
     <h2>Seleccionar fecha para cita:</h2>
     <form action="{{ route('citas.store') }}" method="post">
         @csrf
