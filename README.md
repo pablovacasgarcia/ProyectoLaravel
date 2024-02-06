@@ -83,7 +83,3 @@ Asegúrate de tener instalados los siguientes programas:
 - [@MiguelHurtadoDevelop](https://github.com/MiguelHurtadoDevelop)
 - [@jorgeherrero00](https://github.com/jorgeherrero00)
 
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
-
