@@ -2,10 +2,10 @@
     <div class="row">
         <div class="col-sm-8 offset-sm-2">
             <h1 class="display-3">Añadir marca</h1>
-            <div>
-                <a style="margin: 19px;" href="{{ route('marca.index')}}" class="btn btn-primary">Volver</a>
+            <div class="volver">
+                <a style="margin: 70px;" class="enlaceButton" href="{{ route('marca.index')}}" class="btn btn-primary">Volver</a>
             </div>
-            <div>
+            <div class="formulario">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -15,11 +15,10 @@
                         </ul>
                     </div><br />
                 @endif
-                <form method="post" action="{{ route('marca.store') }}" enctype="multipart/form-data">
+                <form class= "formulario-inputs"method="post" action="{{ route('marca.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre"/>
+                        <input type="text" placeholder="Nombre" class="form-control" name="nombre" id="nombre"/>
                     </div>
 
 

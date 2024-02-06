@@ -1,5 +1,6 @@
 
 <x-app-layout>
+    <h1 > Mis Citas</h1>
     <table>
         <tr>
             <th>Fecha</th>
@@ -29,7 +30,7 @@
        table{
             margin: auto;
             border: 1px solid white;
-            margin-top: 10vh;
+            margin-top: 4vh;
         }
         th, td{
             border: 1px solid white;

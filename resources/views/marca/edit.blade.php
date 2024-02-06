@@ -4,9 +4,9 @@
         <div class="col-sm-8 offset-sm-2">
             <h1 class="display-3">Editar marca</h1>
             <div>
-                <a style="margin: 19px;" href="{{ route('marca.index')}}" class="btn btn-primary">Volver</a>
+                <a style="margin: 70px;" class="enlaceButton" href="{{ route('marca.index')}}" class="btn btn-primary">Volver</a>
             </div>
-            <div>
+            <div class="formulario">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -16,7 +16,7 @@
                         </ul>
                     </div><br />
                 @endif
-                <form method="post"  action="{{ route('marca.update', $marca->id)   }}" >
+                <form method="post" class="formulario-inputs" action="{{ route('marca.update', $marca->id)   }}" >
                     @csrf
                     @method("PUT")
                     

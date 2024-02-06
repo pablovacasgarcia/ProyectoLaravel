@@ -1,4 +1,5 @@
 <x-app-layout>
+    <h1 >Lista de Marcas</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -19,7 +20,7 @@
             </tr>
         @endforeach
     </table>
-    <a href="/marca/create"><button  class="nuevoMarca">Registrar una Marca</button></a>
+    <a href="/marca/create" class=enlaceButton>Registrar una Marca</a>
 
 
 
@@ -38,8 +39,8 @@
        table{
             margin: auto;
             border: 1px solid white;
-            margin-top: 10vh;
-            margin-bottom: 2vh
+            margin-top: 3vh;
+            margin-bottom: 3vh
         }
         th, td{
             border: 1px solid white;
@@ -65,6 +66,10 @@
         }
         td:nth-child(3){
             display: flex;
+        }
+
+        .enlaceButton{
+            margin-left: 45%;
         }
 
 

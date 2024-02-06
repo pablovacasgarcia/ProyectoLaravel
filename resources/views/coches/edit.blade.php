@@ -5,9 +5,9 @@
         <div class="col-sm-8 offset-sm-2">
             <h1 class="display-3">Editar coche</h1>
             <div>
-                <a style="margin: 19px;" href="{{ route('coches.index')}}" class="btn btn-primary">Volver</a>
+                <a style="margin: 70px;" class="enlaceButton" href="{{ route('coches.index')}}" class="btn btn-primary">Volver</a>
             </div>
-            <div>
+            <div class="formulario">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -17,7 +17,7 @@
                         </ul>
                     </div><br />
                 @endif
-                <form method="post"  action="{{ route('coches.update', $datos->id)   }}" >
+                <form method="post" class="formulario-inputs" action="{{ route('coches.update', $datos->id)   }}" >
                     @csrf
                     @method("PUT")
                     
