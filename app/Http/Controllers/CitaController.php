@@ -130,7 +130,6 @@ class CitaController extends Controller
             $msj->to($for);
             $msj->text("Hola $nombre su cita ha sido cancelada con éxito. Recuerda que puedes reservar una nueva cita en nuetra página.");
         });
-
         return redirect()->back();
     }
 }
