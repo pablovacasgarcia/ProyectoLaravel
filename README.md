@@ -75,7 +75,13 @@ Asegúrate de tener instalados los siguientes programas:
     php artisan serve
     ```
 
-9. Visita `http://localhost` con la ip que genere artisan serve en tu navegador para ver la aplicación en funcionamiento.
+9. Para cargar JS y estilos:
+
+    ```bash
+    npm run dev
+    ```
+
+10. Visita `http://localhost` con la ip que genere artisan serve en tu navegador para ver la aplicación en funcionamiento.
 
 ## Contribuyentes
 
