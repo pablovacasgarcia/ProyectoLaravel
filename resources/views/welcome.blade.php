@@ -1165,8 +1165,8 @@
         content: '';
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
+        left: 20%;
+        width: 60%;
         height: 100%;
         transition: all 1s ease-in-out;
         transform: scale(0);
